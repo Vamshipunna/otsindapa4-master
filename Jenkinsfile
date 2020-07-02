@@ -6,6 +6,6 @@
         	  sh 'cd ndap-eureka-server' 
 		 sh 'ls'
 		 sh 'pwd'
-	 	 sh  'mvn clean install'
+	 	 sh  'mvn -f ndap-eureka-server/pom.xml clean install'
 	 }
 }

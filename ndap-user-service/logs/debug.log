@@ -1,0 +1,14 @@
+2020-07-01 09:28:06 [restartedMain] INFO  c.o.n.a.n.UserManagementServiceApplication - No active profile set, falling back to default profiles: default
+2020-07-01 09:28:10 [restartedMain] INFO  c.o.n.a.n.r.UserRepositoryImpl - UserRepositoryImpl.onInit() no data available.null
+2020-07-01 09:28:17 [restartedMain] INFO  c.o.n.a.n.UserManagementServiceApplication - Started UserManagementServiceApplication in 14.983 seconds (JVM running for 16.266)
+2020-07-01 09:30:40 [http-nio-8200-exec-1] INFO  c.o.n.a.n.c.UserRestController - UserRestController.createUser() : UserVo(userId=null, email=sagar@gmail.com, source=email, userName=sagar, userRole=6, password=12345, displayName=dasari, pictureUrl=http://email.goolge.com/image1.jpg)
+2020-07-01 09:30:40 [http-nio-8200-exec-1] INFO  c.o.n.a.n.service.UserService - UserService.userRegistraionService() beginning...
+2020-07-01 09:30:41 [http-nio-8200-exec-2] INFO  c.o.n.a.n.c.UserRestController - UserRestController.getUserByName()sagar
+2020-07-01 09:30:55 [http-nio-8200-exec-5] INFO  c.o.n.a.n.c.UserRestController - UserRestController.customUserLogin()
+2020-07-01 09:30:55 [http-nio-8200-exec-5] INFO  c.o.n.a.n.service.UserService - UserService.authenticateUser() beginning...
+2020-07-01 09:30:55 [http-nio-8200-exec-8] INFO  c.o.n.a.n.c.UserRestController - UserRestController.getUserByName()sagar@gmail.com
+2020-07-01 09:30:55 [http-nio-8200-exec-5] INFO  c.o.n.a.n.service.UserService - <200,[Authorization:"Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYWdhciIsImF1dGhvcml0aWVzIjpbIlJPTEVfQ29ycG9yYXRlIl0sImlhdCI6MTU5MzU3NjA1NSwiZXhwIjoxNTkzNjYyNDU1fQ.iZT6UkYU1EJ40BvLrEKF37Bv28RCusR7hvhbkz0ZJvq8enjiBFSLO0cYgvEDy7unTu0DbYNpe2xGxKrlBZ3BpQ", tokenexpiretime:"2 Jul 2020 04:00:55 GMT", X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY", Content-Length:"0", Date:"Wed, 01 Jul 2020 04:00:55 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]>
+2020-07-01 19:52:00 [restartedMain] INFO  c.o.n.a.n.UserManagementServiceApplication - No active profile set, falling back to default profiles: default
+2020-07-01 19:52:07 [restartedMain] INFO  c.o.n.a.n.UserManagementServiceApplication - Started UserManagementServiceApplication in 10.791 seconds (JVM running for 11.955)
+2020-07-01 20:00:16 [restartedMain] INFO  c.o.n.a.n.UserManagementServiceApplication - No active profile set, falling back to default profiles: default
+2020-07-01 20:00:24 [restartedMain] INFO  c.o.n.a.n.UserManagementServiceApplication - Started UserManagementServiceApplication in 9.75 seconds (JVM running for 10.943)

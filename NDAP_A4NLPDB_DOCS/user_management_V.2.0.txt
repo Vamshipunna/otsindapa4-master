@@ -1,0 +1,224 @@
+For Local user source field values:
+===================================
+"source":"email"
+
+For Social user source field values:
+====================================
+"source":"google"
+"source":"facebook"
+"source":"twitter"
+
+For Local user userrole field values:
+=====================================
+1. These are fixed userroles:("Researchers","Policy Makers","Data Scientists","Journalists","General Public","Corporate")
+
+0 == Default
+1 == Researchers
+2 == PolicyMakers
+3 == DataScientists
+4 == Journalists
+5 == GeneralPublic
+6 == Corporate
+
+These all are Enum values.
+
+"userRole":"Researchers"
+
+
+Step1 For Local user Registration:
+===================================
+RestApi: http://localhost:8100/userservice/api/user/register
+MethodType: POST
+v2.0 updated requirement:
+========================
+Body: {
+	"source":"email",
+	"userName":"user1",
+	"userRole":1, or 2,3,4,5,6
+	"email":"testing@gmail.com",
+	"password":"12345",
+	"displayName:"ABCD",
+	"pictureUrl":"http://localhost:8888/image.jpg"
+}
+
+RestApi Response : 
+==================
+v2.0 updated requirement:
+=========================
+1. All Jwt_tokens will come in Header as response.
+"authenticated": bearer
+"token_expireIn": ,
+"status":"200"
+
+2. In Body response:
+{
+    "content": {
+        "userrole": 1,
+        "email": "testing@gmail.com",
+        "username": "chandrakanthnesi",
+		"displayname":"ABCD",
+		"pictureurl":"http://localhost:8888/image.jpg"
+    }
+}
+
+
+Step2 For Local user login:
+===========================
+RestApi: http://localhost:8100/userservice/api/authenticate/login
+MethodType: POST
+v2.0 updated requirement:
+=========================
+1. In username field the values will userser or gmail will come.
+Body: {
+	"username":"chandrakanthnesi", or "username":"user@gmail.com"
+	"password":"12345"
+}
+RestApi Response : 
+==================
+v2.0 updated requirement:
+=========================
+1. All Jwt_tokens will come in Header as response.
+"authenticated": bearer
+"token_expireIn": ,
+"status":"200"
+
+2. In Body response:
+{
+    "content": {
+        "userrole": 1,
+        "email": "testing@gmail.com",
+        "username": "chandrakanthnesi",
+		"displayname":"ABCD",
+		"pictureurl":"http://localhost:8888/image.jpg"
+    }
+}
+
+Step3 For Social user Signup:
+=============================
+RestApi: http://localhost:8100/userservice/api/socialuser/login
+MethodType: POST
+v2.0 updated requirement:
+=========================
+1. Here for login we will take userId as a username.
+Body: {
+	"userId":"101786822300122938731",
+	"source":"google",
+	"userName":""
+	"email":""
+	"userRole":0,
+	"socialToken":"EAAlo8MZBi15QBAMaevZBR1BgrdEdY4bwFykzMpLtDUWInaCArr2V8vpO3lQbogdLGvuhH9Wu1Fpx2tQZB8z5cvW0YalaLn55O7iCHvvoO2B1ZAmhkA5OhP07tI4vO7DVhQA3BRsfA9Kr4HveAMNe81fB80lM4iBKaZAXdvz5ZC84ZCaBAQZA5qwVpSuATm9WcfSKbGpX1WAgXtKuNQQ4gqIuMflxrtk6gWZBcuTtJSEIKIAZDZD",
+	"displayName":"ABCD",
+	"pictureUrl":"http://localhost:8888/image.jpg"
+}
+
+RestApi Response : 
+==================
+v2.0 requirement:
+=================
+1. All Jwt_tokens will come in Header as response.
+"authenticated": bearer
+"token_expireIn": 1593146123000,
+
+2. In Body response:
+{
+    "content": {
+        "userrole": 1,
+		"username":""
+        "status": "200 ",
+		"displayname":"ABCD",
+		"pictureurl":"http://localhost:8888/image.jpg"
+    }
+}
+
+Step4 For Twitter Fields:
+=========================
+RestApi: http://localhost:8100/userservice/api/twitter/fields
+MethodType: GET
+
+RestApi Response : 
+==================
+v1.0 requirement:
+=================
+{
+    "content_fields": {
+        "client-secret": "C7OvAEtFzH8K3rQ7357iYLs6O0vxpK27tSY5Z2I1U1zAcRm0Kf",
+        "forwaruri": "",
+        "client-id": "F9Y7sVbT6dzWtqHVaMzPqeRxp"
+    }
+}
+v2.0 updated requirement:
+=========================
+1. no changes came.
+
+Step5 For JwtToken Validation:
+==============================
+v2.0 updated requirement:
+=========================
+Rest Api protocal changed
+1. RestApi: http://localhost:8100/userservice/api/validatetoken
+MethodType: POST
+header
+token: token
+RestApi Response : 
+==================
+1. All Jwt_tokens will come in Header as response.
+"authenticated": bearer
+"token_expireIn": ,
+"status":"200"
+
+2. In Body response:
+{
+    "content": {
+        "userrole": 1,
+        "email": "testing@gmail.com",
+        "username": "chandrakanthnesi",
+		"displayname":"ABCD",
+		"pictureurl":"http://localhost:8888/image.jpg"
+    }
+}
+
+v2.0 updated requirement:
+=========================
+While sending request to access our resources from client we have to sent token key with bearer value like below:
+
+Key: Authorization value: Bearer token value
+
+Authorization:Bearer token value
+
+Rest Api protocal changed
+1. RestApi: http://localhost:8100/userservice/api/profile
+MethodType: GET
+
+
+2. In Body response:
+{
+    "content": {
+		"userid":""
+        "userrole": 1,
+		"source":"google"
+        "email": "testing@gmail.com",
+        "username": "chandrakanthnesi",
+		"displayname":"ABCD",
+		"pictureurl":"http://localhost:8888/image.jpg"
+    }
+}
+
+v2.0 updated requirement:
+=========================
+Rest Api protocal changed
+1. RestApi: http://localhost:8100/userservice/api/update
+MethodType: POST
+
+2. In Body response:
+{
+    "content": {
+		"userid":""
+        "userrole": 1,
+        "email": "testing@gmail.com",
+		"displayname":"ABCD",
+		"pictureurl":"http://localhost:8888/image.jpg"
+    }
+}
+
+
+Note: for 'userName' we have to do validation to remove spaces in between username at UI side.

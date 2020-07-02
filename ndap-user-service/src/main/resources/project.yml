@@ -1,0 +1,10 @@
+UserRestController:
+   alluser: Get all users
+   login: Authenticates user and returns its JWT token.
+   me: Returns current user's data.
+   register: Creates user and returns its JWT token
+   socialregister: Authenticates user and returns its JWT token.
+   tokenvalidate: JWT Token Validation.
+   twitter: Get Twitter application properties
+   update : Update User Details.
+   profile : User profile Deatils.
